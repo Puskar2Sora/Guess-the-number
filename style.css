@@ -1,10 +1,10 @@
 :root {
   --bg: #0d0d0d;
-  --card: rgba(10,10,10,0.95);
+  --card: rgba(10, 10, 10, 0.95);
   --accent: #00ff99;
   --accent2: #00ccff;
   --muted: #33ff33;
-  --glass: rgba(0,255,153,0.05);
+  --glass: rgba(0, 255, 153, 0.05);
   --font: 'Courier New', monospace;
 }
 
@@ -22,10 +22,11 @@ body {
   background-color: var(--bg);
   color: var(--muted);
   background-image: radial-gradient(circle at 10% 10%, #00330010, transparent),
-                    radial-gradient(circle at 90% 90%, #0033ff08, transparent);
+    radial-gradient(circle at 90% 90%, #0033ff08, transparent);
 }
 
 .card {
+  margin-left: -5px;
   width: min(720px, 96%);
   background: var(--card);
   border-radius: 16px;
@@ -39,8 +40,13 @@ body {
 }
 
 @keyframes glow {
-  0% { box-shadow: 0 0 15px var(--accent), 0 0 25px var(--accent2); }
-  100% { box-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent2); }
+  0% {
+    box-shadow: 0 0 15px var(--accent), 0 0 25px var(--accent2);
+  }
+
+  100% {
+    box-shadow: 0 0 25px var(--accent), 0 0 50px var(--accent2);
+  }
 }
 
 header {
@@ -61,6 +67,7 @@ h1 {
 }
 
 .game {
+  margin-left: -5px;
   padding: 18px;
   background: rgba(0, 0, 0, 0.85);
   border-radius: 12px;
@@ -81,7 +88,7 @@ input[type=number] {
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid var(--accent);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: var(--muted);
   width: 110px;
   font-size: 16px;
@@ -135,8 +142,9 @@ button.secondary {
 }
 
 .side {
+  margin-right: 18px;
   padding: 18px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   border: 1px solid var(--accent);
   display: flex;
@@ -186,16 +194,36 @@ button.secondary {
 }
 
 @keyframes pop {
-  0% { transform: scale(0.96); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes neonFlash {
-  0%,100% { text-shadow: 0 0 10px #00ff99, 0 0 20px #00ccff; }
-  50% { text-shadow: 0 0 20px #00ff99, 0 0 30px #00ccff; }
+
+  0%,
+  100% {
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ccff;
+  }
+
+  50% {
+    text-shadow: 0 0 20px #00ff99, 0 0 30px #00ccff;
+  }
 }
 
 @media (max-width: 760px) {
-  .card { grid-template-columns: 1fr; }
-  .side { order: 2; }
+  .card {
+    grid-template-columns: 1fr;
+    margin-left: 10px;
+  }
+
+  .side {
+    order: 2;
+  }
 }
